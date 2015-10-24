@@ -10,3 +10,9 @@ while(True):
 for i in numbers:
 	total=total+i
 print total
+
+
+
+
+
+
