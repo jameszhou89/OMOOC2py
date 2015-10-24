@@ -8,3 +8,4 @@
   + [教程该怎么写](draft/how2tutorial.md)
 - [有关](ABOUT.md)
 -呵呵和
+nihao 你好
