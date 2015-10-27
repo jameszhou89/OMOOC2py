@@ -13,30 +13,32 @@ class App:
             frame, text="QUIT", fg="red", command=frame.quit
             )
         self.button.pack(side=LEFT)
+        
+        e = Entry(root,width=50)
+        e.pack()
+        e.focus_set()
 
-        self.hi_there = Button(frame, text="Hello", command=self.say_hi)
-        self.hi_there.pack(side=LEFT)
+        def callback():
+            print e.get()
 
-
-
-
-    def say_hi(self):
-        print "hi there, everyone!"
+        b = Button(root, text="get", width=10, command=callback)
+        b.pack()
+      
 
 root = Tk()
 
 app = App(root)
 
-e = Entry(root,width=50)
-e.pack()
+#e = Entry(root,width=50)
+#e.pack()
 
-e.focus_set()
+#e.focus_set()
 
-def callback():
-    print e.get()
+#def callback():
+    #print e.get()
 
-b = Button(root, text="get", width=10, command=callback)
-b.pack()
+#b = Button(root, text="get", width=10, command=callback)
+#b.pack()
 
 root.mainloop()
 root.destroy() # optional; see description below
