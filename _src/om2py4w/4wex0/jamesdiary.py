@@ -16,7 +16,7 @@ def writediary(data):
     print "I'm going to write these to the file diary.txt."
 
     target.write(data+"  ")
-    target.write(time.strftime("%Y/%m/%d%H:%M:%S"))
+    #target.write(time.strftime("%Y/%m/%d%H:%M:%S"))
     target.write("\n")
 
 
