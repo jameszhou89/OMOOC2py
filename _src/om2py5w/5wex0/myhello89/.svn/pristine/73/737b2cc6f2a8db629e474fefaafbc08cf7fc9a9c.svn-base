@@ -1,0 +1,38 @@
+ # coding:utf-8
+from bottle import route, run, template,debug,get,post,request
+import sys
+import time
+import os
+import jamesdiary
+
+app = Bottle()
+
+@app.route('/')
+def hello():
+    return "Hello, world! - Bottle"
+
+@app.route('/write')
+def write():
+    return '''
+        <form action="/write" method="post">
+            writediary: <input name="writediary1" type="text" />
+            <input value="save" type="submit" />
+        </form>
+    '''
+
+
+@app.route('/write', method='POST')
+def do_write():
+    writediary1= request.forms.get('writediary1')
+    jamesdiary.writediary(writediary1)
+    if writediary1:
+        return template("<p>You are now writing {{diary}} into your diary.</p>", diary=writediary1)
+
+@app.route("/read")
+def read():
+    target = open("diary.txt")
+    content=jamesdiary.readdiary()
+    return content
+
+
+application = sae.create_wsgi_app(app)
